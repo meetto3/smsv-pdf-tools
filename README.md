@@ -25,6 +25,14 @@ npm install
 npm run dev
 ```
 
+## 公開
+
+GitHub Pages で無料公開する構成です。ビルド済みの `dist/` を `gh-pages` ブランチへ配置して公開します。
+
+- 公開予定URL: `https://meetto3.github.io/smsv-pdf-tools/`
+- `main` ブランチはアプリ本体のソースを管理します
+- `gh-pages` ブランチは公開用のビルド成果物を管理します
+
 ## 構成
 
 - `src/` - アプリ本体
