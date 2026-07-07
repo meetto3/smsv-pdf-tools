@@ -445,7 +445,7 @@ export function App() {
   );
 }
 
-function buildInitialPages(pageCount: number) {
+function buildInitialPages(pageCount: number): PagePreview[] {
   return Array.from({ length: pageCount }, (_, index) => {
     const pageNumber = index + 1;
     const isSplitTarget = pageNumber === 1 || pageNumber === 2;

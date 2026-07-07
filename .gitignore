@@ -5,3 +5,4 @@ dist
 work
 tmp
 *.local
+*.tsbuildinfo

@@ -124,10 +124,14 @@ export async function buildExportPdfBlob(
   }
 
   const pdfBytes = await targetDoc.save();
+  const pdfArrayBuffer = pdfBytes.buffer.slice(
+    pdfBytes.byteOffset,
+    pdfBytes.byteOffset + pdfBytes.byteLength,
+  ) as ArrayBuffer;
   const fileNameBase = sanitizeFileName(title || sourceSummary.title || sourceSummary.fileName.replace(/\.pdf$/i, ''));
 
   return {
-    blob: new Blob([pdfBytes], { type: 'application/pdf' }),
+    blob: new Blob([pdfArrayBuffer], { type: 'application/pdf' }),
     fileName: `${fileNameBase || 'export'}.pdf`,
   };
 }
